@@ -349,11 +349,11 @@ func main() {
 	archiveCmd.SetArchivePath(tmpArchivePath)
 
 	if cfg.XcodebuildOptions != "" {
-		options, err := shellquote.Split(cfg.XcodebuildOptions)
-		if err != nil {
-			fail("Failed to shell split XcodebuildOptions (%s), error: %s", cfg.XcodebuildOptions)
-		}
-		archiveCmd.SetCustomOptions(options)
+		// options, err := shellquote.Split(cfg.XcodebuildOptions)
+		// if err != nil {
+		// 	fail("Failed to shell split XcodebuildOptions (%s), error: %s", cfg.XcodebuildOptions)
+		// }
+		archiveCmd.SetCustomOptions(cfg.XcodebuildOptions)
 	}
 
 	if outputTool == "xcpretty" {
