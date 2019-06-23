@@ -352,8 +352,8 @@ func main() {
 		// if err != nil {
 		// 	fail("Failed to shell split XcodebuildOptions (%s), error: %s", cfg.XcodebuildOptions)
 		// }
-		var optionsAsArray []string
-		optionsAsArray = append(opitionsAsArray, cfg.XcodebuildOptions)
+		optionsAsArray := []string{}
+		optionsAsArray = append(optionsAsArray, cfg.XcodebuildOptions)
 		archiveCmd.SetCustomOptions(optionsAsArray)
 	}
 
