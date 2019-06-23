@@ -353,7 +353,9 @@ func main() {
 		// if err != nil {
 		// 	fail("Failed to shell split XcodebuildOptions (%s), error: %s", cfg.XcodebuildOptions)
 		// }
-		archiveCmd.SetCustomOptions([cfg.XcodebuildOptions])
+		var optionsAsArray = []string
+		optionsAsArray[0] = cfg.XcodebuildOptions
+		archiveCmd.SetCustomOptions(optionsAsArray)
 	}
 
 	if outputTool == "xcpretty" {
